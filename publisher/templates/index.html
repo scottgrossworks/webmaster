@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ site_title }}</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body class="lang-en">
+
+<header>
+  <h1>{{ site_title }}</h1>
+  <nav>
+    <a href="#" id="lang-toggle">한국어</a>
+  </nav>
+</header>
+
+<main>
+
+  {# editable: intro #}
+  <section class="intro">
+    <div class="lang-en">{{ intro_text_en }}</div>
+    <div class="lang-ko">{{ intro_text_ko }}</div>
+  </section>
+
+  <section class="posts">
+    {% for post in posts %}
+    <article class="post">
+      {% if post.image_url %}
+      <img src="{{ post.image_url }}" alt="{{ post.title_en }}">
+      {% endif %}
+      <div class="lang-en">
+        <h2>{{ post.title_en }}</h2>
+        <p class="post-date">{{ post.date }}</p>
+        <div class="post-body">{{ post.text_en }}</div>
+      </div>
+      <div class="lang-ko">
+        <h2>{{ post.title_ko }}</h2>
+        <p class="post-date">{{ post.date }}</p>
+        <div class="post-body">{{ post.text_ko }}</div>
+      </div>
+    </article>
+    {% endfor %}
+  </section>
+
+  {# editable: about #}
+  <section class="about">
+    <div class="lang-en">{{ about_text_en }}</div>
+    <div class="lang-ko">{{ about_text_ko }}</div>
+  </section>
+
+  {# editable: contact #}
+  <section class="contact">
+    <div class="lang-en">{{ contact_text_en }}</div>
+    <div class="lang-ko">{{ contact_text_ko }}</div>
+  </section>
+
+  <section class="contact-form">
+    <form id="contact-form" data-api="">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" placeholder="Your Message" required></textarea>
+      <input type="text" name="honeypot" style="display:none" tabindex="-1">
+      <button type="submit">Send Message</button>
+      <div id="form-status"></div>
+    </form>
+  </section>
+
+</main>
+
+<footer>&copy; {{ current_year }} {{ site_title }}</footer>
+
+<script src="/static/site.js"></script>
+</body>
+</html>

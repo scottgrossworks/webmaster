@@ -1,0 +1,2 @@
+# Pillow deferred — needs Lambda Layer, cannot cross-compile from Windows
+# boto3, email, json, re, datetime — all provided by Lambda runtime

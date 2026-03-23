@@ -1,0 +1,158 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Georgia, serif;
+  background: #fff;
+  color: #222;
+  line-height: 1.6;
+}
+
+/* Language visibility */
+body.lang-en .lang-ko { display: none; }
+body.lang-ko .lang-en { display: none; }
+
+/* Layout */
+header, main, footer {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem;
+}
+
+/* Header */
+header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  border-bottom: 1px solid #ddd;
+}
+
+header h1 {
+  font-size: 1.8rem;
+}
+
+#lang-toggle {
+  font-size: 0.9rem;
+  color: #555;
+  text-decoration: none;
+}
+
+#lang-toggle:hover {
+  text-decoration: underline;
+}
+
+/* Sections */
+section {
+  margin-bottom: 2.5rem;
+}
+
+/* Section distinction */
+.intro {
+  font-size: 1.1rem;
+  font-style: italic;
+  color: #555;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #eee;
+}
+
+.about {
+  border-top: 1px solid #eee;
+  padding-top: 2rem;
+  border-left: 3px solid #ddd;
+  padding-left: 1.25rem;
+  margin-top: 2.5rem;
+  color: #444;
+}
+
+.contact {
+  font-size: 0.95rem;
+  color: #666;
+}
+
+.contact-form {
+  background: #fafafa;
+  padding: 1.5rem;
+  border-radius: 4px;
+}
+
+/* Posts */
+article.post {
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 2rem;
+}
+
+article.post img {
+  display: block;
+  max-width: 90%;
+  height: auto;
+  margin: 0 auto 1rem;
+}
+
+article.post h2 {
+  font-size: 1.3rem;
+  margin-bottom: 0.3rem;
+}
+
+.post-date {
+  font-size: 0.85rem;
+  color: #888;
+  margin-bottom: 0.75rem;
+}
+
+.post-body {
+  font-size: 1rem;
+}
+
+/* Contact form */
+#contact-form input[type="text"],
+#contact-form input[type="email"],
+#contact-form textarea {
+  display: block;
+  width: 100%;
+  padding: 0.6rem 0.75rem;
+  margin-bottom: 0.75rem;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+#contact-form textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+#contact-form button {
+  padding: 0.6rem 1.5rem;
+  background: #222;
+  color: #fff;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+#contact-form button:hover {
+  background: #444;
+}
+
+#form-status {
+  margin-top: 0.75rem;
+  font-size: 0.95rem;
+  color: #444;
+}
+
+/* Footer */
+footer {
+  border-top: 1px solid #ddd;
+  font-size: 0.85rem;
+  color: #888;
+  text-align: center;
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  header h1 { font-size: 1.4rem; }
+}
