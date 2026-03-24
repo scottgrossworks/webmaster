@@ -31,6 +31,10 @@ copy lambda_function.py %BUILD_DIR%\
 xcopy /E /I templates %BUILD_DIR%\templates
 xcopy /E /I static %BUILD_DIR%\static
 
+REM Step 3b: Inject contact API URL from config.json
+echo [3b/4] Injecting contact API URL...
+powershell -command "$cfg = Get-Content ..\config.json | ConvertFrom-Json; (Get-Content %BUILD_DIR%\templates\index.html) -replace '%%%%CONTACT_API_URL%%%%', $cfg.contact_api_url | Set-Content %BUILD_DIR%\templates\index.html"
+
 REM Step 4: Create zip file
 echo [4/4] Creating deployment package...
 cd %BUILD_DIR%
