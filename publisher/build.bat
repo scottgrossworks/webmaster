@@ -68,3 +68,10 @@ echo ========================================
 echo Function: %FUNCTION_NAME%
 echo Region: %AWS_REGION%
 echo ========================================
+
+echo.
+echo ========================================
+echo Invoking publisher to refresh S3 site...
+echo ========================================
+aws lambda invoke --function-name %FUNCTION_NAME% --region %AWS_REGION% NUL
+echo Site updated.
