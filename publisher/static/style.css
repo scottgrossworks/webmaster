@@ -89,6 +89,8 @@ article.post img {
   display: block;
   max-width: 90%;
   height: auto;
+  max-height: 500px;
+  object-fit: contain;
   margin: 0 auto 1rem;
 }
 

@@ -9,5 +9,5 @@
   "region": "us-west-2",
   "bedrock_model_id": "anthropic.claude-haiku-4-5-20251001-v1:0",
   "calendar_enabled": false,
-  "contact_api_url": "https://c1mowov5ll.execute-api.us-west-2.amazonaws.com/contact"
+  "contact_api_url": "https://c1mowov5ll.execute-api.us-west-2.amazonaws.com/tyl/contact"
 }
